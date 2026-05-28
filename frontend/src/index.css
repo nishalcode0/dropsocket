@@ -4,3 +4,8 @@
 body {
   font-family: 'Space Grotesk', sans-serif;
 }
+
+html,body,#root {
+  background: linear-gradient(to bottom right, rgb(15,23,42),rgb(30,27,75),rgb(15,23,42));
+  min-height: 100vh;
+}
