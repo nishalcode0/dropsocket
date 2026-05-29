@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -6,7 +7,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Features', href: '#features'},
     { name: 'Pricing' , href: '#pricing'},
-    { name: 'About' , hef: '#about'},
+    { name: 'About' , href: '#about'},
   ];
 
   return (
@@ -37,17 +38,25 @@ export default function Navbar() {
           ))}
           </div>
           {/* Get Started Button */}
+
           <div className="hidden md:block">
-          <button className="group relative px-6 py-2.5 rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300">
-            {/* Gradient background*/}
-              <div className="absolute inset-0  bg-linear-to-r from-blue-500 to-blue-600 opacity-100 group-hover:opacity-90 transition-opacity duration-300" />
+          <Link
+          to="/beta-access"
+          className="group relative px-6 py-2.5 rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300 inline-block"
+          >
+          {/* Gradient background */}
+          <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-blue-600 opacity-100 group-hover:opacity-90 transition-opacity duration-300" />
 
-            {/* Shine effect on hover*/}
-            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-500" />
+          {/* Shine effect on hover */}
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-500" />
 
-            <span className="relative z-10 text-white">Get Started</span>
-            </button>
-          </div>
+         <span className="relative z-10 text-white">
+        Get Started
+        </span>
+       </Link>
+        </div>
+
+
           {/* Mobile menu button */}
           <button
            onClick = {() => setIsOpen(!isOpen)}

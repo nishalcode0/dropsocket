@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function CTA() {
   return (
@@ -50,16 +51,16 @@ export default function CTA() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 
                 {/* Primary button */}
-                <a
-                  href="#features"
-                  className="group/btn relative px-8 lg:px-10 py-3 lg:py-4 rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 w-full sm:w-auto"
-                >
-                  <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-blue-600 opacity-100 group-hover/btn:opacity-90 transition-opacity duration-300 rounded-xl" />
+                <Link
+  to="/beta-access"
+  className="group/btn relative px-8 lg:px-10 py-3 lg:py-4 rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 w-full sm:w-auto"
+>
+                <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-blue-600 opacity-100 group-hover/btn:opacity-90 transition-opacity duration-300 rounded-xl" />
                   <div className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-all duration-500 rounded-xl" />
                   <span className="relative z-10 text-white block group-hover/btn:scale-105 transition-transform duration-300">
                     Get Started Free
                   </span>
-                </a>
+                </Link>
 
                 {/* Secondary button */}
                 <a

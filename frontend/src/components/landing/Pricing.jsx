@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Pricing() {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -193,40 +194,49 @@ export default function Pricing() {
                 </div>
 
                 {/* CTA Button */}
-                <button
-                  className={`w-full py-3 px-6 rounded-xl font-semibold text-sm transition-all duration-300 overflow-hidden relative
-                    ${
-                      plan.ctaVariant === 'primary'
-                        ? 'group/btn'
-                        : ''
-                    }`}
-                >
-                  {plan.ctaVariant === 'primary' ? (
-                    <>
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-100 group-hover/btn:opacity-90 transition-opacity" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-all duration-500" />
-                      <span className="relative z-10 text-white block">{plan.cta}</span>
-                    </>
-                  ) : (
-                    <span className={`relative z-10 
-                      ${
-                        hoveredCard === plan.id
-                          ? 'text-white'
-                          : 'text-gray-300'
-                      }`}>
-                      {plan.cta}
-                    </span>
-                  )}
-                  {plan.ctaVariant === 'secondary' && (
-                    <div className={`absolute inset-0 rounded-xl border transition-all duration-300
-                      ${
-                        hoveredCard === plan.id
-                          ? 'border-blue-400/50 bg-blue-500/10'
-                          : 'border-white/20 bg-transparent'
-                      }`} />
-                  )}
-                </button>
+                <Link
+  to="/beta-access"
+  className={`w-full py-3 px-6 rounded-xl font-semibold text-sm transition-all duration-300 overflow-hidden relative block text-center
+    ${
+      plan.ctaVariant === 'primary'
+        ? 'group/btn'
+        : ''
+    }`}
+>
+  {plan.ctaVariant === 'primary' ? (
+    <>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-100 group-hover/btn:opacity-90 transition-opacity" />
 
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-all duration-500" />
+
+      <span className="relative z-10 text-white block">
+        {plan.cta}
+      </span>
+    </>
+  ) : (
+    <span
+      className={`relative z-10
+        ${
+          hoveredCard === plan.id
+            ? 'text-white'
+            : 'text-gray-300'
+        }`}
+    >
+      {plan.cta}
+    </span>
+  )}
+
+  {plan.ctaVariant === 'secondary' && (
+    <div
+      className={`absolute inset-0 rounded-xl border transition-all duration-300
+        ${
+          hoveredCard === plan.id
+            ? 'border-blue-400/50 bg-blue-500/10'
+            : 'border-white/20 bg-transparent'
+        }`}
+    />
+  )}
+</Link>
                 {/* Bottom accent line for highlight card */}
                 {plan.highlight && (
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 opacity-50 rounded-b-3xl" />
