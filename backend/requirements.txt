@@ -2,4 +2,5 @@ fastapi
 uvicorn
 python-dotenv
 resend
-pydantic
+pydantic[email]
+
