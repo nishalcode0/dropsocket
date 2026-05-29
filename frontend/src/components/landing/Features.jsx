@@ -1,226 +1,238 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function UploadAnimation() {
-  const [clicked, setClicked] = useState(false);
-  const [done, setDone] = useState(false);
-
-  useEffect(() => {
-    const run = () => {
-      setClicked(false);
-      setDone(false);
-      setTimeout(() => setClicked(true), 800);
-      setTimeout(() => setDone(true), 1400);
-      setTimeout(() => {
-        setClicked(false);
-        setDone(false);
-      }, 3500);
-    };
-    run();
-    const interval = setInterval(run, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
+function StoreBlock() {
   return (
-    <div className="flex flex-col items-center gap-3 py-4">
-      <button
-        className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 border
-          ${clicked
-            ? 'bg-blue-600 border-blue-400 scale-95 text-white shadow-lg shadow-blue-500/30'
-            : 'bg-white/5 border-white/20 text-gray-300'
-          }`}
-      >
-        Upload
-      </button>
-      <span
-        className={`text-sm font-medium border rounded-lg px-4 py-1.5 transition-all duration-500
-          ${done
-            ? 'opacity-100 border-green-400 text-green-400 translate-y-0'
-            : 'opacity-0 border-transparent text-green-400 translate-y-2'
-          }`}
-      >
-        ✓ Product Uploaded
-      </span>
+    <div className="flex flex-col lg:flex-row items-center w-full rounded-3xl border border-black/70 bg-linear-to-br from-blue-500/10 via-purple-500/5 to-blue-500/5 shadow-[0_8px_48px_rgba(0,0,0,0.7)] overflow-hidden min-h-[520px]">
+
+      {/* LEFT 70% - Device Mockups */}
+      <div className="relative w-full lg:w-[70%] h-[520px] flex items-center justify-center overflow-hidden bg-linear-to-br from-blue-950/60 to-slate-950/80">
+
+        {/* Laptop */}
+        <div className="relative w-[540px] h-[340px] rounded-[28px] border border-white/10 bg-[#111827] shadow-[0_20px_80px_rgba(0,0,0,0.8)] overflow-hidden z-10">
+
+          {/* Top bezel */}
+          <div className="h-6 bg-[#1f2937] flex items-center justify-center">
+            <div className="w-2 h-2 rounded-full bg-gray-500" />
+          </div>
+
+          {/* Screen */}
+          <div className="bg-white h-full overflow-hidden">
+
+            {/* Browser bar */}
+            <div className="bg-gray-100 px-4 py-2 flex items-center gap-2 border-b border-gray-200">
+              <div className="flex gap-1">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+              </div>
+
+              <div className="flex-1 bg-white rounded-md text-xs text-gray-400 px-3 py-1 text-center">
+                yourstore.dropsocket.com
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6">
+              <p className="text-lg font-bold text-gray-800 mb-5">
+                Your Store
+              </p>
+
+              <div className="space-y-3">
+                {['Notion CRM Template', 'Canva Pack', 'Ebook PDF'].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 p-4 border border-gray-100 rounded-xl"
+                  >
+                    <div className="w-10 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-500 text-xs font-bold">
+                      PDF
+                    </div>
+
+                    <div>
+                      <p className="text-sm font-semibold text-gray-700">
+                        {item}
+                      </p>
+
+                      <p className="text-sm text-gray-400">
+                        ₹299
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* iPhone */}
+        <div className="absolute left-10 bottom-0 w-[170px] h-[350px] rounded-[36px] border-[6px] border-black bg-black shadow-[0_0_50px_rgba(0,0,0,0.9)] overflow-hidden z-20">
+
+          {/* Notch */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-b-2xl z-30" />
+
+          {/* Screen */}
+          <div className="bg-white w-full h-full overflow-hidden pt-5">
+
+            {/* Mobile browser bar */}
+            <div className="bg-gray-100 px-2 py-1.5 flex items-center gap-1 border-b border-gray-200">
+              <div className="flex gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+              </div>
+
+              <div className="flex-1 bg-white rounded text-[8px] text-gray-400 px-1 py-0.5 text-center">
+                yourstore.dropsocket.com
+              </div>
+            </div>
+
+            {/* Mobile content */}
+            <div className="p-3">
+              <p className="text-[11px] font-bold text-gray-700 mb-2">
+                Your Store
+              </p>
+
+              <div className="space-y-2">
+                {['Notion CRM Template', 'Canva Pack', 'Ebook PDF'].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 p-2 border border-gray-100 rounded-lg"
+                  >
+                    <div className="w-6 h-7 rounded bg-blue-100 flex items-center justify-center text-[8px] text-blue-500 font-bold">
+                      PDF
+                    </div>
+
+                    <div>
+                      <p className="text-[9px] font-medium text-gray-700 leading-none">
+                        {item}
+                      </p>
+
+                      <p className="text-[8px] text-gray-400 mt-1">
+                        ₹299
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT 30% - Text */}
+      <div className="w-full lg:w-[30%] p-10 flex flex-col justify-center space-y-4">
+        <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase">
+          01
+        </span>
+
+        <h3 className="text-3xl font-bold text-white leading-tight">
+          Create Your Own Store
+        </h3>
+
+        <p className="text-gray-400 leading-relaxed text-sm">
+          Build a personalized creator storefront to showcase and sell your digital products. Share one link, sell everything.
+        </p>
+      </div>
     </div>
   );
 }
 
-function PaymentLinkAnimation() {
-  const [clicked, setClicked] = useState(false);
-  const [link, setLink] = useState('');
-  const [price, setPrice] = useState('');
-  const fullLink = 'dropsocket/you/product/01';
-  const fullPrice = '₹299';
+function PaymentsBlock() {
+  const [showPayment, setShowPayment] = useState(false);
+  const [ripple, setRipple] = useState(false);
 
-  useEffect(() => {
-    const run = () => {
-      setClicked(false);
-      setLink('');
-      setPrice('');
-      setTimeout(() => {
-        let i = 0;
-        const pi = setInterval(() => {
-          setPrice(fullPrice.slice(0, i + 1));
-          i++;
-          if (i >= fullPrice.length) clearInterval(pi);
-        }, 80);
-      }, 600);
-      setTimeout(() => setClicked(true), 1400);
-      setTimeout(() => {
-        let i = 0;
-        const li = setInterval(() => {
-          setLink(fullLink.slice(0, i + 1));
-          i++;
-          if (i >= fullLink.length) clearInterval(li);
-        }, 40);
-      }, 1800);
-      setTimeout(() => {
-        setClicked(false);
-        setLink('');
-        setPrice('');
-      }, 5000);
-    };
-    run();
-    const interval = setInterval(run, 5500);
-    return () => clearInterval(interval);
-  }, []);
+  const handleCardClick = () => {
+    setRipple(true);
+    setShowPayment(true);
+
+    setTimeout(() => setShowPayment(false), 2000);
+    setTimeout(() => setRipple(false), 600);
+  };
 
   return (
-    <div className="flex flex-col gap-3 py-4 w-full px-2">
-      <div className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-blue-300 font-mono min-h-[36px]">
-        {price || <span className="text-gray-600">Set price...</span>}
+    <div className="flex flex-col lg:flex-row items-center w-full rounded-3xl border border-black/70 bg-linear-to-br from-blue-500/10 via-purple-500/5 to-blue-500/5 shadow-[0_8px_48px_rgba(0,0,0,0.7)] overflow-hidden min-h-[500px]">
+
+      {/* Text */}
+      <div className="w-full lg:w-[30%] p-10 flex flex-col justify-center space-y-4 order-2 lg:order-1">
+        <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase">
+          02
+        </span>
+
+        <h3 className="text-3xl font-bold text-white leading-tight">
+          Get Paid Seamlessly
+        </h3>
+
+        <p className="text-gray-400 leading-relaxed text-sm">
+          Accept payments instantly. Customers pay, you earn.
+        </p>
       </div>
-      <button
-        className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-300 border w-full
-          ${clicked
-            ? 'bg-blue-600 border-blue-400 scale-95 text-white shadow-lg shadow-blue-500/30'
-            : 'bg-white/5 border-white/20 text-gray-300'
-          }`}
-      >
-        Generate Link
-      </button>
-      <div
-        className={`text-xs font-mono text-blue-400 border border-blue-500/30 rounded-lg px-3 py-2 bg-blue-500/10 transition-all duration-700
-          ${link ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
-      >
-        https://{link}
-      </div>
-    </div>
-  );
-}
 
-function RazorpayAnimation() {
-  const [clicked, setClicked] = useState(false);
-  const [connected, setConnected] = useState(false);
+      {/* Card */}
+      <div className="relative w-full lg:w-[70%] h-[420px] flex items-center justify-center overflow-hidden bg-linear-to-br from-blue-950/60 to-slate-950/80 order-1 lg:order-2">
 
-  useEffect(() => {
-    const run = () => {
-      setClicked(false);
-      setConnected(false);
-      setTimeout(() => setClicked(true), 800);
-      setTimeout(() => setConnected(true), 1500);
-      setTimeout(() => {
-        setClicked(false);
-        setConnected(false);
-      }, 4000);
-    };
-    run();
-    const interval = setInterval(run, 4500);
-    return () => clearInterval(interval);
-  }, []);
+        <div className="flex flex-col items-center gap-6">
 
-  return (
-    <div className="flex flex-col items-center gap-3 py-4">
-      <button
-        className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 border
-          ${clicked
-            ? 'bg-blue-600 border-blue-400 scale-95 text-white shadow-lg shadow-blue-500/30'
-            : 'bg-white/5 border-white/20 text-gray-300'
-          }`}
-      >
-        Connect Razorpay
-      </button>
-      <span
-        className={`text-sm font-medium border rounded-lg px-4 py-1.5 transition-all duration-500
-          ${connected
-            ? 'opacity-100 border-green-400 text-green-400 translate-y-0'
-            : 'opacity-0 border-transparent translate-y-2'
-          }`}
-      >
-        ✓ Razorpay Connected
-      </span>
-    </div>
-  );
-}
-
-function DeliveryAnimation() {
-  const [step, setStep] = useState(0);
-  const emails = ['john@gmail.com', 'sam@gmail.com', 'tom@gmail.com'];
-
-  useEffect(() => {
-    const run = () => {
-      setStep(0);
-      setTimeout(() => setStep(1), 800);
-      setTimeout(() => setStep(2), 1600);
-      setTimeout(() => setStep(3), 2400);
-      setTimeout(() => setStep(0), 5000);
-    };
-    run();
-    const interval = setInterval(run, 5500);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="flex flex-col gap-2 py-4 w-full px-2">
-      <div className="text-xs font-mono text-blue-400 border border-blue-500/30 rounded-lg px-3 py-2 bg-blue-500/10 mb-1 text-center">
-        product-file.pdf
-      </div>
-      {emails.map((email, i) => (
-        <div
-          key={email}
-          className={`flex items-center justify-between text-xs px-3 py-2 rounded-lg border transition-all duration-500
-            ${step > i
-              ? 'border-green-400 text-green-400 bg-green-400/10'
-              : 'border-white/10 text-gray-400 bg-white/5'
+          <div
+            onClick={handleCardClick}
+            className={`relative cursor-pointer w-80 h-48 rounded-2xl bg-linear-to-br from-blue-400 via-blue-500 to-blue-700 shadow-[0_20px_60px_rgba(59,130,246,0.5)] transition-all duration-300 select-none ${
+              ripple ? 'scale-95' : 'hover:scale-105'
             }`}
-        >
-          <span>{email}</span>
-          <span
-           className={`transition-all duration-500 ${
-           step > i ? 'opacity-100' : 'opacity-0'
-           }`}
           >
-            ✓ Sent
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
+            {/* Shine */}
+            <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-white/20 via-transparent to-transparent" />
 
-function AnalyticsAnimation() {
-  return (
-    <div className="py-3 w-full">
-      <div className="bg-white rounded-xl overflow-hidden shadow-xl border border-gray-200">
-        {/* Mac title bar */}
-        <div className="flex items-center gap-1.5 px-3 py-2 bg-gray-100 border-b border-gray-200">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-          <span className="text-xs text-gray-400 ml-2 font-medium">DropSocket Analytics</span>
-        </div>
-        {/* Content */}
-        <div className="p-3 grid grid-cols-2 gap-2 bg-gray-50">
-          <div className="bg-white rounded-lg p-2 border border-blue-100 shadow-sm col-span-2">
-            <p className="text-xs text-gray-400">Revenue Earned</p>
-            <p className="text-lg font-bold text-blue-600">₹12,480</p>
+            {/* Content */}
+            <div className="relative p-6 h-full flex flex-col justify-between">
+
+              <div className="flex justify-between items-start">
+                <p className="text-white/60 text-xs font-medium uppercase tracking-widest">
+                  DropSocket
+                </p>
+
+                <div className="w-10 h-6 rounded bg-white/20 flex items-center justify-center">
+                  <div className="w-3 h-3 rounded-full border-2 border-white/60" />
+                </div>
+              </div>
+
+              {/* Chip */}
+              <div className="w-10 h-8 rounded bg-yellow-400/80 border border-yellow-300/50 shadow-inner" />
+
+              <div>
+                <p className="text-white font-mono text-lg tracking-widest mb-2">
+                  1234 5678 9012
+                </p>
+
+                <div className="flex justify-between items-end">
+                  <p className="text-white/80 text-xs uppercase tracking-widest">
+                    Creator Name
+                  </p>
+
+                  <div className="text-right">
+                    <p className="text-white/50 text-[9px] uppercase">
+                      Valid
+                    </p>
+
+                    <p className="text-white text-xs font-mono">
+                      06/30
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Popup */}
+            {showPayment && (
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg animate-bounce border border-green-400">
+                ✓ Payment Received
+              </div>
+            )}
           </div>
-          <div className="bg-white rounded-lg p-2 border border-blue-100 shadow-sm">
-            <p className="text-xs text-gray-400">Products Sold</p>
-            <p className="text-lg font-bold text-gray-800">48</p>
-          </div>
-          <div className="bg-white rounded-lg p-2 border border-blue-100 shadow-sm">
-            <p className="text-xs text-gray-400">Orders</p>
-            <p className="text-lg font-bold text-gray-800">31</p>
+
+          <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-5 py-2">
+            <div className="w-2 h-2 rounded-full bg-blue-400" />
+
+            <span className="text-gray-300 text-sm font-medium">
+              Powered by Razorpay
+            </span>
           </div>
         </div>
       </div>
@@ -228,185 +240,192 @@ function AnalyticsAnimation() {
   );
 }
 
-function SecureDownloadAnimation() {
-  const [clicked, setClicked] = useState(false);
-  const [downloading, setDownloading] = useState(false);
-  const [done, setDone] = useState(false);
-
-  useEffect(() => {
-    const run = () => {
-      setClicked(false);
-      setDownloading(false);
-      setDone(false);
-      setTimeout(() => setClicked(true), 800);
-      setTimeout(() => setDownloading(true), 1400);
-      setTimeout(() => setDone(true), 2400);
-      setTimeout(() => {
-        setClicked(false);
-        setDownloading(false);
-        setDone(false);
-      }, 5000);
-    };
-    run();
-    const interval = setInterval(run, 5500);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="flex flex-col items-center gap-3 py-4 w-full px-2">
-      <div
-        className={`text-xs font-mono px-3 py-2 rounded-lg border w-full text-center transition-all duration-300 cursor-pointer
-          ${clicked
-            ? 'border-blue-400 text-blue-300 bg-blue-500/10 scale-95'
-            : 'border-white/10 text-gray-400 bg-white/5'
-          }`}
-      >
-        https://dropsocket/download/abc123
-      </div>
-      <div
-      className={`text-xs text-gray-400 transition-all duration-500 ${
-     downloading ? 'opacity-100' : 'opacity-0'
-      }`} 
-      >
-        Downloading securely...
-      </div>
-      <span
-        className={`text-sm font-medium border rounded-lg px-4 py-1.5 transition-all duration-500
-          ${done
-            ? 'opacity-100 border-green-400 text-green-400 translate-y-0'
-            : 'opacity-0 border-transparent translate-y-2'
-          }`}
-      >
-        ✓ Download Complete
-      </span>
-    </div>
-  );
-}
-
-// ─── Main Features Component ──────────────────────────────────────
-
-export default function Features() {
-  const [visibleCards, setVisibleCards] = useState([]);
-  const cardRefs = useRef([]);
-
-  useEffect(() => {
-    const observers = cardRefs.current.map((ref, index) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              setVisibleCards((prev) => [...new Set([...prev, index])]);
-            }, index * 100);
-          }
-        },
-        { threshold: 0.1 }
-      );
-      if (ref) observer.observe(ref);
-      return observer;
-    });
-    return () => observers.forEach((o) => o.disconnect());
-  }, []);
-
-  const features = [
+function DeliveryBlock() {
+  const emails = [
     {
-      number: '01',
-      title: 'One-Click Upload',
-      description: 'Upload Notion, Canva, PDFs, eBooks and Zips in seconds with our intelligent file handler.',
-      animation: <UploadAnimation />,
+      subject: 'Your download is ready!',
+      time: 'Just now',
+      tag: 'New',
     },
     {
-      number: '02',
-      title: 'Payment Links',
-      description: 'Generate shareable payment links instantly. Set your price and share anywhere.',
-      animation: <PaymentLinkAnimation />,
+      subject: 'Your Notion CRM is here',
+      time: '2m ago',
+      tag: 'New',
     },
     {
-      number: '03',
-      title: 'Razorpay Ready',
-      description: 'Seamless Razorpay integration. Connect once, collect payments forever.',
-      animation: <RazorpayAnimation />,
+      subject: 'Download: Canva Pack',
+      time: '5m ago',
+      tag: null,
     },
     {
-      number: '04',
-      title: 'Auto Delivery',
-      description: 'Files delivered instantly to customer emails via Resend. Zero manual work.',
-      animation: <DeliveryAnimation />,
-    },
-    {
-      number: '05',
-      title: 'Analytics Dashboard',
-      description: 'Track revenue, products sold, and order history in real-time.',
-      animation: <AnalyticsAnimation />,
-    },
-    {
-      number: '06',
-      title: 'Secure Downloads',
-      description: 'Protected download links with expiry options. Your customers download safely.',
-      animation: <SecureDownloadAnimation />,
+      subject: 'Ebook delivered successfully',
+      time: '1h ago',
+      tag: null,
     },
   ];
 
+  const [activeEmail, setActiveEmail] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveEmail((prev) => (prev + 1) % emails.length);
+    }, 1800);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex flex-col lg:flex-row items-center w-full rounded-3xl border border-black/70 bg-linear-to-br from-blue-500/10 via-purple-500/5 to-blue-500/5 shadow-[0_8px_48px_rgba(0,0,0,0.7)] overflow-hidden min-h-[500px]">
+
+      {/* Inbox */}
+      <div className="relative w-full lg:w-[70%] h-[420px] flex items-center justify-center overflow-hidden bg-linear-to-br from-blue-950/60 to-slate-950/80 p-6">
+
+        <div className="w-full max-w-lg rounded-xl overflow-hidden shadow-2xl border border-white/10">
+
+          {/* Tabs */}
+          <div className="bg-gray-200 px-3 pt-2 flex items-end gap-1">
+            <div className="bg-white px-4 py-1.5 rounded-t-lg flex items-center gap-2 text-xs text-gray-700 border-t border-l border-r border-gray-300">
+              <div className="w-3 h-3 rounded-full bg-red-400" />
+
+              <span className="font-medium">
+                Gmail — Inbox
+              </span>
+            </div>
+          </div>
+
+          {/* Address bar */}
+          <div className="bg-gray-100 px-3 py-2 flex items-center gap-2 border-b border-gray-300">
+
+            <div className="flex gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+              <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+            </div>
+
+            <div className="flex-1 bg-white rounded-full px-3 py-1 text-xs text-gray-500 border border-gray-300">
+              mail.google.com
+            </div>
+          </div>
+
+          {/* Emails */}
+          <div className="bg-white">
+
+            <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
+              <span className="text-sm font-semibold text-gray-700">
+                Primary
+              </span>
+
+              <span className="text-xs text-gray-400">
+                4 new messages
+              </span>
+            </div>
+
+            {emails.map((email, i) => (
+              <div
+                key={i}
+                className={`flex items-center gap-3 px-4 py-3 border-b border-gray-100 transition-all duration-500 ${
+                  activeEmail === i
+                    ? 'bg-blue-50 border-l-2 border-l-blue-400'
+                    : 'hover:bg-gray-50'
+                }`}
+              >
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold ${
+                    activeEmail === i
+                      ? 'bg-blue-500'
+                      : 'bg-gray-400'
+                  }`}
+                >
+                  DS
+                </div>
+
+                <div className="flex-1 min-w-0">
+
+                  <div className="flex items-center gap-2 mb-0.5">
+
+                    <p
+                      className={`text-xs font-semibold truncate ${
+                        activeEmail === i
+                          ? 'text-blue-700'
+                          : 'text-gray-700'
+                      }`}
+                    >
+                      DropSocket
+                    </p>
+
+                    {email.tag && (
+                      <span className="text-[9px] bg-green-100 text-green-600 border border-green-300 rounded px-1.5 py-0.5 font-semibold">
+                        {email.tag}
+                      </span>
+                    )}
+                  </div>
+
+                  <p
+                    className={`text-xs truncate ${
+                      activeEmail === i
+                        ? 'text-blue-600 font-medium'
+                        : 'text-gray-500'
+                    }`}
+                  >
+                    {email.subject}
+                  </p>
+                </div>
+
+                <p className="text-[10px] text-gray-400">
+                  {email.time}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Text */}
+      <div className="w-full lg:w-[30%] p-10 flex flex-col justify-center space-y-4">
+
+        <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase">
+          03
+        </span>
+
+        <h3 className="text-3xl font-bold text-white leading-tight">
+          Instant Delivery
+        </h3>
+
+        <p className="text-gray-400 leading-relaxed text-sm">
+          Automatic download delivery directly to your customer’s inbox.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default function Features() {
   return (
     <section
       id="features"
-      className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 px-6 py-24"
+      className="bg-linear-to-br from-slate-950 via-blue-950 to-slate-950 px-6 lg:px-20 py-32"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto space-y-8">
+
         {/* Header */}
-        <div className="text-center mb-20 space-y-4">
-          <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-400/20 rounded-full px-4 py-2 w-fit mx-auto">
-            <span className="w-2 h-2 bg-blue-400 rounded-full" />
-            <span className="text-sm text-blue-300 font-medium">FEATURES</span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight max-w-5xl mx-auto">
-            Everything You Need to{' '}
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              Scale Your Business
+        <div className="text-center mb-24 space-y-4">
+
+          <h2 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+            All tools needed for{' '}
+            <span className="bg-linear-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+              creators to sell
             </span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
-            Built for creators. Designed for scale.
+
+          <p className="text-gray-400 text-lg max-w-xl mx-auto font-light">
+            Everything in one place. No juggling tools. No manual work.
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              ref={(el) => (cardRefs.current[index] = el)}
-            className={`relative flex flex-col rounded-2xl
-            border border-white/10
-            bg-white/[0.03]
-            p-6 transition-all duration-700 hover:border-blue-400/20 hover:bg-white/[0.05]
-            ${
-            visibleCards.includes(index)
-            ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-10'
-          }`} 
-            >
-              {/* Number */}
-              <span className="text-4xl font-bold text-blue-400/60 mb-2">
-                {feature.number}
-              </span>
-
-              {/* Title */}
-              <h3 className="text-lg font-semibold text-white mb-2">
-                {feature.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                {feature.description}
-              </p>
-
-              {/* Animation Area */}
-              <div className="mt-auto border border-white/5 rounded-xl bg-white/[0.02] px-2 min-h-[140px] flex items-center justify-center">
-                {feature.animation}
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Feature Blocks */}
+        <StoreBlock />
+        <PaymentsBlock />
+        <DeliveryBlock />
       </div>
     </section>
   );

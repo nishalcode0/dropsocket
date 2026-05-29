@@ -19,16 +19,17 @@ export default function Hero() {
     {/* Main Heading*/}
     <div className="space-y-4">
     <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-    Sell Digital Products{''}
+    Build Your Creator {''}
+
     <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
                 </h1>
     <span className="bg-linear-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-    Automatically 
+    Storefront
     </span>
     
     </h1>
     <p className="text-lg text-gray-300 leading-relaxed mx-w-xl">
-    Stop manually sending Notion, Canva, PDF, and Drive links after every payment
+    Sell digital products, grow your audience, and automate delivery in one place.
     </p>
     </div>
 
