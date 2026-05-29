@@ -5,6 +5,7 @@ import Features from './Features.jsx'
 import Pricing from './Pricing.jsx'
 import CTA from './CTA.jsx'
 import Footer from './Footer.jsx'
+import FAQ from './FAQ.jsx'
 
 export default function LandingPage () {
   return (
@@ -14,6 +15,7 @@ export default function LandingPage () {
     <SubHero />
     <Features />
     <Pricing />
+    <FAQ />
     <CTA />
     <Footer />
     </>
