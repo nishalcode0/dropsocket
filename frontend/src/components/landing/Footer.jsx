@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactDropdown from './ContactDropdown.jsx'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -7,7 +8,6 @@ export default function Footer() {
     { label: 'Features', href: '#features' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },
-    { label: 'Contact', href: '#contact' },
   ];
 
   const legalLinks = [
@@ -98,6 +98,8 @@ export default function Footer() {
                     </a>
                   </li>
                 ))}
+                <li className="text-gray-400 text-sm hover:text-blue-300 transition-colors duration-300"> <ContactDropdown />
+                </li>
               </ul>
             </div>
 
