@@ -47,7 +47,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 border-t border-blue-400/20">
+    <footer className="bg-linear-to-br from-slate-950 via-blue-950 to-slate-950 border-t border-blue-400/20">
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
         
@@ -57,7 +57,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-linear-to-br from-blue-400 to-blue-600 rounded-lg" />
               <span className="text-xl font-bold text-white">DropSocket</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
