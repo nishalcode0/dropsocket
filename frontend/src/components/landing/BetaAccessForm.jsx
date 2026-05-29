@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://dropsocket-production.up.railway.app';
 
 export default function BetaAccessForm() {
   const [loading, setLoading] = useState(false);
