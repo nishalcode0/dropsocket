@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactDropdown from './ContactDropdown.jsx'
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,9 +12,9 @@ export default function Footer() {
   ];
 
   const legalLinks = [
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms of Service', href: '/terms' },
-  ];
+      { label: 'Privacy Policy', to:'/privacy'},
+      { label: 'Terms Of Service', to: '/terms'},
+      ];
 
   const socialLinks = [
     {
@@ -108,16 +109,16 @@ export default function Footer() {
               <h3 className="text-white font-semibold text-sm uppercase tracking-widest">Legal</h3>
               <ul className="space-y-2.5">
                 {legalLinks.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-gray-400 text-sm hover:text-blue-300 transition-colors duration-300"
+                <li key={link.label}>
+                    <Link 
+                    to={link.to}
+                    className="text-gray-400 text-sm hover:text-blue-300 transition-colors duration-300"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
-              </ul>
+                              </ul>
             </div>
           </div>
         </div>
