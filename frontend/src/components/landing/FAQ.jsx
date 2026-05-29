@@ -14,7 +14,7 @@ export default function FAQ() {
     {
       id: 2,
       question: 'Does the platform have payout thresholds?',
-      answer: 'We aim to keep payouts creator-friendly without unnecessary high payout limits.',
+      answer: 'We keep no payout thresholds for creators, the money you earn directly comes to you',
     },
     {
       id: 3,
