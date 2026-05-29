@@ -73,9 +73,9 @@ export default function ContactDropdown() {
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
         className="text-inherit bg-none border-none p-0 cursor-pointer text-sm hover:text-blue-300 transition-colors duration-300"
-      >
+      > 
         <span className="relative z-10">Contact</span>
-        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/0 via-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-blue-500/5 group-hover:to-purple-500/5 transition-all duration-300" />
+        <div className="absolute inset-0 rounded-lg bg-linear-to-r from-blue-500/0 via-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-blue-500/5 group-hover:to-purple-500/5 transition-all duration-300" />
       </button>
 
       {/* Dropdown Panel */}
@@ -84,7 +84,7 @@ export default function ContactDropdown() {
           ref={dropdownRef}
           className="absolute bottom-full right-0 mb-2 animate-in fade-in slide-in-from-top-2 duration-300"
         >
-          <div className="rounded-2xl border border-blue-400/30 bg-gradient-to-br from-blue-500/15 via-purple-500/10 to-blue-500/5 backdrop-blur-lg shadow-[0_20px_48px_rgba(59,130,246,0.2)] overflow-hidden min-w-64">
+          <div className="rounded-2xl border border-blue-400/30 bg-linear-to-br from-blue-500/15 via-purple-500/10 to-blue-500/5 backdrop-blur-lg shadow-[0_20px_48px_rgba(59,130,246,0.2)] overflow-hidden min-w-64">
             
             {/* Header */}
             <div className="px-6 py-4 border-b border-white/10">
@@ -123,7 +123,7 @@ export default function ContactDropdown() {
             </div>
 
             {/* Footer text */}
-            <div className="px-6 py-3 border-t border-white/10 bg-white/[0.02]">
+            <div className="px-6 py-3 border-t border-white/10 bg-white/2">
               <p className="text-xs text-gray-500 text-center">
                 Usually responds within 24h
               </p>

@@ -4,7 +4,7 @@ export default function CTA() {
   return (
     <section
       id="about"
-      className="relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 px-6 py-32 overflow-hidden"
+      className="relative bg-linear-to-br from-slate-950 via-blue-950 to-slate-950 px-6 py-32 overflow-hidden"
     >
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -22,10 +22,10 @@ export default function CTA() {
         {/* Card container */}
         <div className="relative group">
           {/* Glowing border effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-linear-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
           {/* Inner card */}
-          <div className="relative rounded-3xl border border-blue-400/30 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-blue-500/5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.3)] transition-all duration-500 p-8 lg:p-16">
+          <div className="relative rounded-3xl border border-blue-400/30 bg-linear-to-br from-blue-500/10 via-purple-500/5 to-blue-500/5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.3)] transition-all duration-500 p-8 lg:p-16">
 
             {/* Content wrapper */}
             <div className="space-y-8 text-center">
@@ -34,7 +34,7 @@ export default function CTA() {
               <div className="space-y-4">
                 <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
                   Launch Your{' '}
-                  <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                     Digital Store
                   </span>
                   {' '}Today
@@ -54,8 +54,8 @@ export default function CTA() {
                   href="#features"
                   className="group/btn relative px-8 lg:px-10 py-3 lg:py-4 rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 w-full sm:w-auto"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-100 group-hover/btn:opacity-90 transition-opacity duration-300 rounded-xl" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-all duration-500 rounded-xl" />
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-blue-600 opacity-100 group-hover/btn:opacity-90 transition-opacity duration-300 rounded-xl" />
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-all duration-500 rounded-xl" />
                   <span className="relative z-10 text-white block group-hover/btn:scale-105 transition-transform duration-300">
                     Get Started Free
                   </span>
@@ -102,7 +102,7 @@ export default function CTA() {
         {/* Bottom decorative text */}
         <div className="mt-16 text-center">
           <p className="text-xs text-gray-600 uppercase tracking-widest font-semibold">
-            Join 100+ creators already selling on DropSocket
+            Be the first people selling on DropSocket
           </p>
         </div>
       </div>

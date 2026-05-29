@@ -81,7 +81,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 px-6 py-32 overflow-hidden"
+      className="relative bg-linear-to-br from-slate-950 via-blue-950 to-slate-950 px-6 py-32 overflow-hidden"
     >
       {/* Background blur effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -100,7 +100,7 @@ export default function FAQ() {
 
           <h2 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
             Frequently asked{' '}
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
               questions
             </span>
           </h2>
@@ -117,7 +117,7 @@ export default function FAQ() {
           {canScrollLeft && (
             <button
               onClick={() => scroll('left')}
-              className="absolute -left-4 top-1/2 -translate-y-1/2 z-30 hidden lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+              className="absolute -left-4 top-1/2 -translate-y-1/2 z-30 hidden lg:flex items-center justify-center w-12 h-12 rounded-full bg-linear-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
               aria-label="Scroll left"
             >
               <svg
@@ -140,7 +140,7 @@ export default function FAQ() {
           {canScrollRight && (
             <button
               onClick={() => scroll('right')}
-              className="absolute -right-4 top-1/2 -translate-y-1/2 z-30 hidden lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+              className="absolute -right-4 top-1/2 -translate-y-1/2 z-30 hidden lg:flex items-center justify-center w-12 h-12 rounded-full bg-linear-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
               aria-label="Scroll right"
             >
               <svg
@@ -180,12 +180,12 @@ export default function FAQ() {
             {faqs.map((faq) => (
               <div
                 key={faq.id}
-                className="flex-shrink-0 w-full sm:w-96 snap-center"
+                className="shrink-0 w-full sm:w-96 snap-center"
               >
-                <div className="group relative h-full rounded-3xl border border-black/60 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-blue-500/5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_48px_rgba(59,130,246,0.3)] transition-all duration-500 overflow-hidden p-8 lg:p-10 flex flex-col justify-between min-h-[380px]">
+                <div className="group relative h-full rounded-3xl border border-black/60 bg-linear-to-br from-blue-500/10 via-purple-500/5 to-blue-500/5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_48px_rgba(59,130,246,0.3)] transition-all duration-500 overflow-hidden p-8 lg:p-10 flex flex-col justify-between min-h-[380px]">
 
                   {/* Hover glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-t from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   {/* Content */}
                   <div className="relative z-10 space-y-6">
@@ -208,7 +208,7 @@ export default function FAQ() {
 
                   {/* Bottom accent */}
                   <div className="relative z-10 pt-6 mt-auto">
-                    <div className="h-1 w-12 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="h-1 w-12 bg-linear-to-r from-blue-400 to-purple-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </div>
               </div>
