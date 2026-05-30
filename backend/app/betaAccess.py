@@ -22,7 +22,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-resend.api_key = os.getenv("RESEND_API_KEY")
+resend.api_key = os.getenv("RESEND_API_KEY").strip()
 
 class BetaAccessForm(BaseModel):
     name: str
