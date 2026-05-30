@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import axios from 'axios';
 
-const API_URL ='courageous-tenderness-production-12ef.up.railway.app' ;
+const API_URL ='https://courageous-tenderness-production-12ef.up.railway.app' ;
 
 export default function BetaAccessForm() {
   const [loading, setLoading] = useState(false);
