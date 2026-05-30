@@ -9,7 +9,7 @@ load_dotenv()
 
 app = FastAPI()
 
-#CORS middleware
+#CORS Middleware 
 
 app.add_middleware(
     CORSMiddleware,
