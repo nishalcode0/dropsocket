@@ -81,14 +81,17 @@ export default function Navbar() {
           <a 
           key={link.name}
           href={link.href}
-          className="block px-4 py-2.5 text-sm font-medium text-gray-900 dark:text-white hover:bg-white/10 rounded-lg transition-colors"
+          className="block px-4 py-2.5 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition-colors"
           >
           {link.name}
           </a>
           ))}
-          <button className="w-full px-4 py-2.5 rounded-lg bg-linear-to-r from-blue-500 to-blue-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity">
-            Get Started
-            </button>
+        <Link
+         to="/beta-access"
+          className="block w-full px-4 py-2.5 rounded-lg bg-linear-to-r from-blue-500 to-blue-600      text-white font-semibold text-sm hover:opacity-90 transition-opacity text-center"
+          >
+        Get Started
+        </Link> 
           </div>
         )}
       </div>

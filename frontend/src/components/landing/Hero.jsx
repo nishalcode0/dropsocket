@@ -35,15 +35,21 @@ export default function Hero() {
 
     {/* buttons */}
     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-    <button className="group relative px-8 py-3 rounded-xl font-semibold text-base overflow-hidden transition-all duration-300">
+      <a
+  href="#about"
+  className="group relative px-8 py-3 rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 inline-block"
+>
       <div className="absolute inset-0 bg-linear-to-r from-blue-400 via-blue-500 to-blue-600 opacity-100 group-hover:opacity-90 transition-opacity duration-300" />
       <div className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-500" />
-      <span className="relative z-10 txt-white">Get Started</span>
-    </button>
+      <span className="relative z-10 text-white">Get Started</span>
+    </a>
 
-    <button className="px-8 py-3 rounded-xl font-semibold text-base border border-gray-600 text-white hover:border-blue-400/50 hover:bg-blue-500/5 transition-all duration-300 fex items-center gap-2">
+    <a
+   href="#features"
+    className="px-8 py-3 rounded-xl font-semibold text-base border border-gray-600 text-white hover:   border-blue-400/50 hover:bg-blue-500/5 transition-all duration-300 flex items-center gap-2"
+    >
     <span className="text-xl">➡</span> See How It Works
-    </button>
+    </a>
     </div>
     </div>
 
