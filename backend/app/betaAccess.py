@@ -84,4 +84,10 @@ async def submit_beta_access(form_data: BetaAccessForm):
 async def health_check():
     return {"status":"ok"}
 
+@app.get("/")
+async def root():
+    return {"message":"Backend is live"}
+
+
+
 
