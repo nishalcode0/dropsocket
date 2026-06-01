@@ -4,57 +4,40 @@ export default function DashboardStats({
   change,
 }) {
   return (
-    <div className="
+    <div
+      className="
       rounded-3xl
-      border border-blue-400/10
-      bg-linear-to-br
-      from-blue-950/30
-      to-purple-950/20
-      backdrop-blur-md
-      p-6
-      transition-all
-      duration-300
-      hover:border-blue-400/20
-      hover:translate-y-[-2px]
-    ">
+      border
+      border-white/10
+      bg-white/5
+      backdrop-blur-xl
+      p-4 md:p-6
+      "
+    >
+      <p className="text-xs md:text-sm text-slate-400">
+        {title}
+      </p>
 
-      <div className="flex items-start justify-between">
+      <h3 className="text-2xl md:text-3xl font-semibold mt-3">
+        {value}
+      </h3>
 
-        <div>
-          <p className="
-            text-xs
-            uppercase
-            tracking-wider
-            text-slate-400
-          ">
-            {title}
-          </p>
-
-          <h3 className="
-            text-3xl
-            font-semibold
-            text-white
-            mt-3
-          ">
-            {value}
-          </h3>
-        </div>
-
-        <span className="
-          px-2.5
-          py-1
-          rounded-full
-          bg-green-500/10
-          border border-green-500/20
-          text-green-400
-          text-xs
-          font-medium
-        ">
+      <div
+        className="
+        inline-flex
+        mt-3
+        px-2
+        py-1
+        rounded-full
+        bg-green-500/10
+        border
+        border-green-500/20
+        "
+      >
+        <p className="text-green-400 text-xs">
           {change}
-        </span>
-
+        </p>
       </div>
-
     </div>
   );
 }

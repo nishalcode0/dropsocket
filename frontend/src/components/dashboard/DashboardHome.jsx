@@ -26,7 +26,7 @@ export default function DashboardHome() {
 
         {/* Header */}
         <div>
-          <h1 className="text-4xl font-bold text-white">
+          <h1 className="text-3xl md:text-4xl font-bold">
             Welcome Back 
           </h1>
 
@@ -36,7 +36,7 @@ export default function DashboardHome() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
           <DashboardStats
             title="Revenue"
             value="₹12,450"
