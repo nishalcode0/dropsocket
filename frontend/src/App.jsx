@@ -9,6 +9,8 @@ import Products from './pages/dashboard/Products.jsx'
 import Orders from './pages/dashboard/Orders.jsx'
 import StoreSettings from './pages/dashboard/StoreSettings.jsx'
 import Analytics from './pages/dashboard/Analytics.jsx'
+import Billing from './pages/dashboard/Billing.jsx'
+import Profile from './pages/dashboard/Profile.jsx'
 
 export default function App(){
   return (
@@ -23,6 +25,8 @@ export default function App(){
         <Route path="dashboard/orders" element={<Orders />} />
         <Route path="dashboard/store-settings" element={<StoreSettings />} />
         <Route path="dashboard/analytics" element={<Analytics />} />
+        <Route path="dashboard/billing" element={<Billing />} />
+        <Route path="dashboard/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   )
