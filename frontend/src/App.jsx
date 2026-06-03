@@ -7,6 +7,7 @@ import BetaAccess from './pages/BetaAccess.jsx';
 import Dashboard from './pages/dashboard/Dashboard.jsx'
 import Products from './pages/dashboard/Products.jsx'
 import Orders from './pages/dashboard/Orders.jsx'
+import StoreSettings from './pages/dashboard/StoreSettings.jsx'
 
 export default function App(){
   return (
@@ -19,6 +20,7 @@ export default function App(){
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="dashboard/products" element={<Products />} />
         <Route path="dashboard/orders" element={<Orders />} />
+        <Route path="dashboard/store-settings" element={<StoreSettings />} />
       </Routes>
     </BrowserRouter>
   )
