@@ -55,7 +55,7 @@ async def submit_beta_access(form_data: BetaAccessForm):
         """
         result = resend.Emails.send(
             {
-                "from":"onboarding@resend.dev",
+                "from":"DropSocket <hello@dropsocket.in>",
                 "to":"code0.nishal@gmail.com",
                 "subject":f"New Beta Access Request from {form_data.name}",
                 "html":f"<pre>{email_body}</pre>",
