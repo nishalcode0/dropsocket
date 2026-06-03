@@ -16,6 +16,8 @@ app.add_middleware(
     allow_origins=[
     "http://localhost:5173",
     "https://dropsocket.vercel.app",
+    "https://dropsocket.in",
+    "https://www.dropsocket.in",
     ],
     allow_credentials=True,
     allow_methods=["*"],
