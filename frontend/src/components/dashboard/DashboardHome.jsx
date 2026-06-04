@@ -2,6 +2,7 @@ import DashboardLayout from './DashboardLayout';
 import DashboardStats from './DashboardStats';
 
 export default function DashboardHome() {
+  // Recent Orders JSON variable
   const recentOrders = [
     {
       product: 'Notion Template',
