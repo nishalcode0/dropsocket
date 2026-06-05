@@ -5,6 +5,8 @@ import {
   TrendingUp,
 } from 'lucide-react';
 
+//Good Bye dropsocket for now :)
+
 const stats = [
   {
     title: 'Revenue',
